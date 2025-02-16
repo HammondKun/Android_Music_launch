@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="690px"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15px"
+    tools:ignore="PxUsage">
+
+    <TextView
+        android:id="@+id/songNameTextView"
+        android:gravity="center"
+        android:layout_width="658px"
+        android:layout_height="67px"
+        android:textSize="36px"
+        android:textColor="@color/white"
+        android:background="@color/grey"
+        />
+
+</LinearLayout>

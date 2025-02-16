@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="MainVm"
+            type="com.example.cd_tuner_demo.MainViewModel" />
+    </data>
+
+    <AbsoluteLayout
+        android:layout_width="1920px"
+        android:layout_height="720px"
+        tools:context=".MainActivity"
+        tools:ignore="Deprecated,PxUsage,ContentDescription">
+
+        <!--Top background-->
+        <TextView
+            android:layout_width="1920px"
+            android:layout_height="60.86px"
+            android:background="#000000"
+            android:layout_x="0px"
+            android:layout_y="0px"/>  <!-- 黑色背景 -->
+        <!--Mid-Fragment-->
+        <ImageView
+            android:layout_width="1920px"
+            android:layout_height="509.14px"
+            android:background="@drawable/toyota_background"
+            android:layout_x="0px"
+            android:layout_y="60.84px"
+            tools:ignore="ContentDescription" />
+        <!--Bot-Fragment-->
+        <ImageView
+            android:layout_width="1920px"
+            android:layout_height="150px"
+            android:layout_x="0px"
+            android:layout_y="570px"
+            android:src="@drawable/bot_pic"
+            tools:ignore="ContentDescription" />
+
+        <!--Top items-->
+        <ImageView
+                android:layout_width="280px"
+                android:layout_height="40px"
+                android:layout_x="1607px"
+                android:layout_y="10px"
+                android:src="@drawable/top_statue"
+                tools:ignore="ContentDescription" />
+            <View
+                android:layout_width="1920px"
+                android:layout_height="2px"
+                android:background="@drawable/gradient_line_top"
+                android:layout_x="0px"
+                android:layout_y="54px"/>
+
+        <!--Mid items-->
+        <ImageView
+            android:layout_width="720px"
+            android:layout_height="466px"
+            android:src="@drawable/navi_map"
+            android:layout_x="40px"
+            android:layout_y="81.16px"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="1056px"
+            android:layout_y="462px"
+            android:src="@drawable/heart_love"/>
+
+        <LinearLayout
+            android:id="@+id/cd_view"
+            android:layout_width="470px"
+            android:layout_height="220px"
+            android:orientation="vertical"
+            android:layout_x="821px"
+            android:layout_y="162px"
+            android:background="#838B8B"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{MainVm.library.cd}"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:paddingStart="20px"
+                android:textSize="36px"
+                tools:ignore="RtlSymmetry" />
+            <View
+                android:layout_width="235.25px"
+                android:layout_height="1.8px"
+                android:background="@drawable/gradient_line_cd"
+                android:layout_marginStart="10px"/>
+            <TextView
+                android:id="@+id/song_name"
+                android:text="@{MainVm.library.song}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28px"
+                android:textColor="@color/white"
+                android:layout_marginStart="10px"
+                android:layout_marginTop="20px"/>
+            <TextView
+                android:id="@+id/album_name"
+                android:text="@{MainVm.library.album}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24px"
+                android:textColor="@color/white"
+                android:layout_marginStart="10px" />
+            <TextView
+                android:id="@+id/artist_name"
+                android:text="@{MainVm.library.artist}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24px"
+                android:textColor="@color/white"
+                android:layout_marginStart="10px" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/main_music"
+            android:layout_width="150px"
+            android:layout_height="145px"
+            android:src="@drawable/music_launch"
+            android:layout_x="1110px"
+            android:layout_y="210px"/>
+
+        <LinearLayout
+            android:id="@+id/tuner_view"
+            android:layout_width="470px"
+            android:layout_height="220px"
+            android:orientation="vertical"
+            android:layout_x="1343px"
+            android:layout_y="162px"
+            android:background="#838B8B"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{MainVm.library.tuner}"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:paddingStart="20px"
+                android:textSize="36px"
+                tools:ignore="RtlSymmetry"/>
+            <View
+                android:layout_width="235.25px"
+                android:layout_height="1.8px"
+                android:background="@drawable/gradient_line_tuner"
+                android:layout_marginStart="10px"/>
+            <ImageView
+                android:layout_width="382.5px"
+                android:layout_height="56.57px"
+                android:layout_gravity="center"
+                android:layout_marginTop="30px"
+                android:src="@drawable/voice_tunnel"/>
+
+            <TextView
+                android:id="@+id/frequceny"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10px"
+                android:text="@{MainVm.library.frequency}"
+                android:textColor="@color/white"
+                android:textSize="36px" />
+        </LinearLayout>
+
+
+
+    </AbsoluteLayout>
+</layout>

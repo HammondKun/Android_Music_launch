@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="TunerVm"
+            type="com.example.cd_tuner_demo.TunerViewModel" />
+    </data>
+
+    <AbsoluteLayout
+        android:layout_width="1920px"
+        android:layout_height="720px"
+        tools:context=".MainActivity"
+        tools:ignore="Deprecated,PxUsage,ContentDescription,UselessLeaf,HardcodedText">
+
+        <!--Top background-->
+        <TextView
+            android:layout_width="1920px"
+            android:layout_height="60.86px"
+            android:background="#000000"
+            android:layout_x="0px"
+            android:layout_y="0px"/>  <!-- 黑色背景 -->
+        <!--Mid-Fragment-->
+        <ImageView
+            android:layout_width="1920px"
+            android:layout_height="509.14px"
+            android:background="@drawable/toyota_background"
+            android:layout_x="0px"
+            android:layout_y="60.84px"
+            tools:ignore="ContentDescription" />
+        <!--Bot-Fragment-->
+        <ImageView
+            android:layout_width="1920px"
+            android:layout_height="150px"
+            android:layout_x="0px"
+            android:layout_y="570px"
+            android:src="@drawable/bot_pic"
+            tools:ignore="ContentDescription" />
+
+        <!--Top items-->
+        <ImageView
+            android:layout_width="280px"
+            android:layout_height="40px"
+            android:layout_x="1607px"
+            android:layout_y="10px"
+            android:src="@drawable/top_statue"
+            tools:ignore="ContentDescription" />
+        <View
+            android:layout_width="1920px"
+            android:layout_height="2px"
+            android:background="@drawable/gradient_line_top"
+            android:layout_x="0px"
+            android:layout_y="55px"/>
+        <ImageView
+            android:id="@+id/back_to_main_tuner"
+            android:layout_width="86px"
+            android:layout_height="60px"
+            android:layout_x="0px"
+            android:layout_y="0px"
+            android:src="@drawable/back"/>
+        <TextView
+            android:layout_width="533px"
+            android:layout_height="36.1px"
+            android:text="@{TunerVm.library.tuner}"
+            android:textColor="@color/white"
+            android:textSize="32px"
+            android:layout_x="110px"
+            android:layout_y="10px"/>
+        <!--Mid items-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tuner_list"
+            android:layout_width="690px"
+            android:layout_height="480px"
+            android:layout_x="160px"
+            android:layout_y="83px"/>
+
+        <View
+            android:layout_width="7px"
+            android:layout_height="480px"
+            android:background="@drawable/gradient_line_secondpriority"
+            android:layout_x="843px"
+            android:layout_y="84px"/>
+
+        <LinearLayout
+            android:layout_width="770px"
+            android:layout_height="420px"
+            android:layout_x="915px"
+            android:layout_y="112px"
+            android:background="#838B8B"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:layout_marginTop="70px"
+                android:layout_width="564px"
+                android:layout_height="67px"
+                android:textSize="38px"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:text="@{TunerVm.library.broadcast}"/>
+            <TextView
+                android:id="@+id/AM_or_FM"
+                android:layout_marginTop="22px"
+                android:layout_width="235px"
+                android:layout_height="56px"
+                android:textSize="32px"
+                android:textColor="#60FFFFFF"
+                android:gravity="center"
+                android:text="@{TunerVm.library.band}"/>
+            <TextView
+                android:id="@+id/frequceny_tuner"
+                android:layout_marginTop="9px"
+                android:layout_width="400px"
+                android:layout_height="56px"
+                android:textSize="32px"
+                android:textColor="#60FFFFFF"
+                android:gravity="center"
+                android:text="@{TunerVm.library.frequency}"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_x="968px"
+            android:layout_y="313px"
+            android:src="@drawable/front_tuner"
+            android:onClick="@{() -> TunerVm.library.changeBand()}"/>
+
+        <ImageView
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_x="1560px"
+            android:layout_y="313px"
+            android:src="@drawable/next_tuner"
+            android:onClick="@{() -> TunerVm.library.changeBand()}"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="1720px"
+            android:layout_y="112px"
+            android:src="@drawable/heart_love"/>
+        <ImageView
+            android:id="@+id/frame_view"
+            android:layout_width="520px"
+            android:layout_height="70px"
+            android:layout_x="1040px"
+            android:layout_y="440px"
+            android:src="@drawable/frame_animation"/>
+    </AbsoluteLayout>
+</layout>

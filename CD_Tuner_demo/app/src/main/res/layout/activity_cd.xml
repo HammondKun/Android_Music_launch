@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="CdVm"
+            type="com.example.cd_tuner_demo.CdViewModel" />
+    </data>
+
+    <AbsoluteLayout
+        android:layout_width="1920px"
+        android:layout_height="720px"
+        tools:context=".MainActivity"
+        tools:ignore="Deprecated,PxUsage,ContentDescription,HardcodedText">
+
+        <!--Top background-->
+        <TextView
+            android:layout_width="1920px"
+            android:layout_height="60.86px"
+            android:background="#000000"
+            android:layout_x="0px"
+            android:layout_y="0px"/>  <!-- 黑色背景 -->
+        <!--Mid-Fragment-->
+        <ImageView
+            android:layout_width="1920px"
+            android:layout_height="509.14px"
+            android:background="@drawable/toyota_background"
+            android:layout_x="0px"
+            android:layout_y="60.84px"
+            tools:ignore="ContentDescription" />
+        <!--Bot-Fragment-->
+        <ImageView
+            android:layout_width="1920px"
+            android:layout_height="150px"
+            android:layout_x="0px"
+            android:layout_y="570px"
+            android:src="@drawable/bot_pic"
+            tools:ignore="ContentDescription" />
+
+        <!--Top items-->
+        <ImageView
+            android:layout_width="280px"
+            android:layout_height="40px"
+            android:layout_x="1607px"
+            android:layout_y="10px"
+            android:src="@drawable/top_statue"
+            tools:ignore="ContentDescription" />
+        <View
+            android:layout_width="1920px"
+            android:layout_height="2px"
+            android:background="@drawable/gradient_line_top"
+            android:layout_x="0px"
+            android:layout_y="55px"/>
+        <ImageView
+            android:id="@+id/back_to_main_cd"
+            android:layout_width="86px"
+            android:layout_height="60px"
+            android:layout_x="0px"
+            android:layout_y="0px"
+            android:src="@drawable/back"/>
+        <TextView
+            android:layout_width="533px"
+            android:layout_height="36.1px"
+            android:text="@{CdVm.library.cd}"
+            android:textColor="@color/white"
+            android:textSize="32px"
+            android:layout_x="110px"
+            android:layout_y="10px"/>
+        <!--Mid items-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cd_list"
+            android:layout_width="690px"
+            android:layout_height="480px"
+            android:layout_x="160px"
+            android:layout_y="83px"/>
+
+        <View
+            android:layout_width="7px"
+            android:layout_height="480px"
+            android:background="@drawable/gradient_line_secondpriority"
+            android:layout_x="843px"
+            android:layout_y="84px"/>
+
+        <LinearLayout
+            android:layout_width="770px"
+            android:layout_height="400px"
+            android:layout_x="1000px"
+            android:layout_y="132px"
+            android:background="#838B8B"
+            android:orientation="vertical"
+            android:gravity="start|top">
+
+            <TextView
+                android:id="@+id/song_name"
+                android:layout_width="471px"
+                android:layout_height="70px"
+                android:text="@{CdVm.library.song}"
+                android:textSize="38px"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="277px"
+                android:gravity="start|center"
+                />
+
+            <TextView
+                android:id="@+id/album_name"
+                android:layout_width="471px"
+                android:layout_height="56px"
+                android:layout_marginTop="10.5px"
+                android:layout_marginStart="277px"
+                android:text="@{CdVm.library.album}"
+                android:textSize="32px"
+                android:textColor="#60FFFFFF"
+                android:gravity="start|center"/>
+
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="471px"
+                android:layout_height="56px"
+                android:layout_marginStart="277px"
+                android:text="@{CdVm.library.artist}"
+                android:textSize="32px"
+                android:textColor="#60FFFFFF"
+                android:gravity="start|center"/>
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="770px"
+            android:layout_height="8px"
+            android:layout_x="1000px"
+            android:layout_y="370px"
+            android:max="100"
+            android:progressTint="@color/lightblue"/>
+        
+        <TextView
+            android:id="@+id/seekBarCurrentTime"
+            android:layout_width="145px"
+            android:layout_height="37.5px"
+            android:text="00:00"
+            android:layout_x="1010px"
+            android:layout_y="380px"
+            android:textSize="30px"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/seekBarTotalTime"
+            android:layout_width="145px"
+            android:layout_height="37.5px"
+            android:text="00:00"
+            android:layout_x="1610px"
+            android:layout_y="380px"
+            android:textSize="30px"
+            android:textColor="@color/white"
+            android:gravity="right"/>
+
+        <ImageView
+            android:id="@+id/cd_music"
+            android:layout_width="220px"
+            android:layout_height="220px"
+            android:src="@drawable/music_launch"
+            android:layout_x="1000px"
+            android:layout_y="132px"/>
+        <!--+263px-->
+        <ImageView
+            android:id="@+id/auto_closed"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/auto_closed"
+            android:layout_x="1010px"
+            android:layout_y="434px"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/auto_opened"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/auto_opened"
+            android:layout_x="1010px"
+            android:layout_y="434px"
+            android:visibility="invisible"/>/>
+
+        <ImageView
+            android:id="@+id/trackup"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/trackup"
+            android:layout_x="1169px"
+            android:layout_y="434px"
+            android:onClick="@{() -> CdVm.library.previousSong()}"/>
+
+        <ImageView
+            android:id="@+id/play_pause"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/play"
+            android:layout_x="1327px"
+            android:layout_y="434px"
+            android:visibility="@{CdVm.library.isPlaying ? android.view.View.INVISIBLE : android.view.View.VISIBLE}"
+            android:onClick="@{() -> CdVm.library.playOrPauseMusic()}"/>
+
+        <ImageView
+            android:id="@+id/play_play"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/pause"
+            android:layout_x="1327px"
+            android:layout_y="434px"
+            android:visibility="@{CdVm.library.isPlaying ? android.view.View.VISIBLE : android.view.View.INVISIBLE}"
+            android:onClick="@{() -> CdVm.library.playOrPauseMusic()}"/>
+
+
+        <ImageView
+            android:id="@+id/trackdown"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/trackdown"
+            android:layout_x="1485px"
+            android:layout_y="434px"
+            android:onClick="@{() -> CdVm.library.nextSong()}"/>
+
+        <ImageView
+            android:id="@+id/boardstyle_list"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/repert_list"
+            android:layout_x="1643px"
+            android:layout_y="434px"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/boardstyle_single"
+            android:layout_width="118px"
+            android:layout_height="96px"
+            android:src="@drawable/repeat_self"
+            android:layout_x="1643px"
+            android:layout_y="434px"
+            android:visibility="invisible"/>
+
+
+
+    </AbsoluteLayout>
+</layout>
